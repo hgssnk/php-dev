@@ -1,0 +1,14 @@
+version: '3'
+services:
+  php-dev:
+    image: php-dev
+    container_name: php-dev
+    build: .
+    hostname: web
+    privileged: true
+    ports:
+      - 80:80
+    volumes:
+      - ./share/web:/var/www/html
+      - ./share/db:/var/lib/mysql
+    tty: true
